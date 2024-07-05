@@ -18,10 +18,14 @@ const LogSin = () => {
         <div className="underline"></div>
         <div className="inputs">
           
-          <div className="input">
-            <img src={user_icon} alt="" />
+            
+              {action == "Login" ? <div></div> :
+               <div className="input">
+              <img src={user_icon} alt="" />
             <input type="text"  placeholder='Name'/>
-          </div>
+            </div>}
+            
+        
 
           <div className="input">
             <img src={eamil_icon} alt="" />
@@ -34,7 +38,8 @@ const LogSin = () => {
           </div>
             </div>
         </div>
-        <div className="forgot-password">Lost Password ? <span>Click Here</span></div>
+        {action==="Sign Up"?<div></div>: <div className="forgot-password">Lost Password ? <span>Click Here</span></div>}
+       
       <div className="submit-container">
         <div className={action === "Login" ? "submit gray" : "submit"} onClick={() => { setAction("Sign Up") }}>
           Sign Up
